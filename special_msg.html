@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message For You!</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for the message page if different from main */
+        .message-container {
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 700px;
+            margin: 50px auto;
+            animation: slideInLeft 1.5s ease-out;
+            color: #333; /* Darker text for readability on a lighter background */
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .message-container h2 {
+            font-size: 2.5em;
+            color: #6a0572;
+            margin-bottom: 30px;
+        }
+
+        .message-container p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .signature {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff6f61;
+            margin-top: 40px;
+            font-style: italic;
+        }
+
+        /* --- Confetti styles from Experiment2 --- */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffd700; /* Gold */
+            border-radius: 50%;
+            animation: fall linear infinite;
+            opacity: 0;
+        }
+
+        .confetti:nth-child(2n) { background-color: #ff69b4; /* Hot Pink */ }
+        .confetti:nth-child(3n) { background-color: #87ceeb; /* Sky Blue */ }
+        .confetti:nth-child(4n) { background-color: #32cd32; /* Lime Green */ }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <h2>My Dearest Rehat,</h2>
+        <p><h4>On your special day, I wanted to tell you how much you mean to me. Every moment with you is a gift, and your kindness, humor, and spirit light up my world. It's only you that I think about, and I am so grateful for every second we shared together. I guess I never got these feelings for any other girl that I got for you even though we met sometime back
+        and I never thought that I would fall for you so hard. You are the one my friends talk about to make me blush since only weakness that I got at the moment is you. 
+        </h4></p>
+        <p><h4>
+            You are a beautiful person inside and out. I hope this year brings you happiness .
+            Wishing you all the success, joy and sweetness🥰 you deserve. Thank you for being you.
+        </h4></p>
+        <p><h4>May your day be filled with laughter, surrounded by those who cherish you. Remember, you are loved more than you know.</h4></p>
+        <p class="signature">With all my heart,<br>Harlabh</p>
+    </div>
+    <script>
+        // --- Confetti Effect from Experiment2 ---
+        function createConfetti() {
+            for (let i = 0; i < 100; i++) { // Generate 100 confetti pieces
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's'; // 2 to 5 seconds
+                confetti.style.animationDelay = Math.random() * 2 + 's'; // Delay for staggered effect
+                document.body.appendChild(confetti);
+
+                confetti.addEventListener('animationend', () => {
+                    confetti.remove(); // Remove confetti after animation
+                });
+            }
+        }
+
+        // Trigger confetti when the page loads
+        window.addEventListener('DOMContentLoaded', createConfetti);
+    </script>
+</body>
+</html>

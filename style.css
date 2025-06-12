@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right top, #ff9a9e, #fad0c4); /* Soft, inviting gradient */
+    color: #fff;
+    text-align: center;
+    overflow: hidden; /* To handle potential animations without scrollbars */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    animation: fadeIn 2s ease-out;
+    max-width: 90%;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.message {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.countdown {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ffe0b2; /* A warm, soft yellow */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+#surpriseButton {
+    background-color: #ff6f61; /* Vibrant coral */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-top: 20px;
+}
+
+#surpriseButton:hover {
+    background-color: #e05c50;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.gift-section {
+    display: none; /* Hidden by default */
+    margin-top: 30px;
+    animation: slideInUp 1s ease-out;
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.gift-image {
+    max-width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #6a0572; /* Deep purple */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    background-color: #4a0050;
+    transform: translateY(-2px);
+}
+
+/* Optional: Add some floating elements for extra beauty */
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float 10s infinite ease-in-out;
+    filter: blur(1px); /* Soften the edges */
+}
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+    50% { transform: translateY(-20px) translateX(20px); opacity: 0.5; }
+    100% { transform: translateY(0) translateX(0); opacity: 0.8; }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffd700; /* Gold */
+    border-radius: 50%;
+    animation: fall linear infinite;
+    opacity: 0;
+}
+
+.confetti:nth-child(2n) { background-color: #ff69b4; /* Hot Pink */ }
+.confetti:nth-child(3n) { background-color: #87ceeb; /* Sky Blue */ }
+.confetti:nth-child(4n) { background-color: #32cd32; /* Lime Green */ }
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
